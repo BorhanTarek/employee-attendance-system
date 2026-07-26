@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: employee-attendance-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: TARGET_LAT
+        value: "37.7749"
+      - key: TARGET_LNG
+        value: "-122.4194"
+      - key: ALLOWED_RADIUS
+        value: "50"
